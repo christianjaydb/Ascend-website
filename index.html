@@ -532,6 +532,22 @@ p {
     font-size: 16px;
 }
 
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    padding: 6px;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-toggle:hover {
+    color: #66aaff;
+}
+
 /* Mobile adjustments */
 @media screen and (max-width: 768px) {
     .container {
@@ -550,6 +566,119 @@ p {
         width: auto;
         margin: 5px 0;
         padding: 20px 15px;
+    }
+
+    /* Collapsible hamburger navigation */
+    nav {
+        flex-wrap: wrap;
+        padding: 10px 15px;
+    }
+
+    .nav-right {
+        margin-left: auto;
+        gap: 12px !important;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    nav img {
+        height: 32px;
+        margin-right: 0;
+    }
+
+    .help-icon {
+        margin-right: 0;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #00072D;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.25);
+        z-index: 1000;
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+
+    .nav-links.nav-open {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 14px 20px;
+        width: 100%;
+        box-sizing: border-box;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .dropdown {
+        width: 100%;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: none;
+    }
+
+    .dropdown-content {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        border-radius: 0;
+        opacity: 1;
+        pointer-events: auto;
+        background-color: #f5f7fb;
+    }
+
+    .dropdown-content a {
+        padding: 12px 30px;
+    }
+
+    /* Org chart / team section */
+    .level {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    /* Slideshow */
+    .slideshow-container {
+        height: 220px;
+    }
+
+    /* Header video */
+    header video {
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+    }
+
+    /* Comments widget */
+    .comments-section {
+        top: 70px;
+        right: 10px;
+    }
+
+    .comments-panel {
+        width: min(280px, 82vw);
+        right: 0;
+    }
+
+    .comments-toggle {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    .section-heading {
+        font-size: 1.8rem;
+    }
+
+    .modal-content {
+        width: 88%;
+        margin: 8% auto;
     }
 }
 
@@ -573,6 +702,45 @@ p {
     .section-card p {
         font-size: 0.9rem;
         margin-bottom: 10px;
+    }
+
+    .section-heading {
+        font-size: 1.5rem;
+    }
+
+    .slideshow-container {
+        height: 180px;
+    }
+
+    .play-button::after {
+        display: none;
+    }
+
+    .comments-section {
+        right: 5px;
+    }
+
+    .comments-toggle span {
+        display: none;
+    }
+
+    .modal-content {
+        width: 92%;
+        margin: 12% auto;
+        padding: 15px;
+    }
+
+    .modal-title {
+        font-size: 20px;
+    }
+
+    .footer-links li {
+        display: inline-block;
+        margin: 5px 8px;
+    }
+
+    .position {
+        min-width: 130px;
     }
 }
 
@@ -1241,7 +1409,7 @@ nav a.active:not(img) {
 
 <!-- Navigation -->
 <nav>
-    <div>
+    <div class="nav-links" id="navLinks">
         <a onclick="showSection('home', this)" class="active">Home</a>
         <div class="dropdown">
             <a onclick="toggleDropdown()">About</a>
@@ -1255,10 +1423,13 @@ nav a.active:not(img) {
         <a onclick="showSection('services', this)">Services</a>
         <a onclick="showSection('contacts', this)">Contacts</a>
     </div>
-    <div style="display: flex; align-items: center; gap: 20px;">
+    <div class="nav-right" style="display: flex; align-items: center; gap: 20px;">
         <a onclick="openModal('helpModal')" class="help-icon" title="Need Help?">
             <i class="fas fa-question-circle"></i>
         </a>
+        <button class="nav-toggle" id="navToggle" onclick="toggleNav()" aria-label="Toggle menu">
+            <i class="fas fa-bars" id="navToggleIcon"></i>
+        </button>
         <img src="logo.png" alt="Logo or Image" onclick="scrollToHeader()" style="cursor: pointer;" />
     </div>
 </nav>
@@ -1399,9 +1570,9 @@ nav a.active:not(img) {
         <div class="level ceo-level">
             <div class="position">
                 <div class="content">
-                    <img src="SAR.JPEG" alt="President" class="member-photo">
+                    <img src="BEL.PNG" alt="President" class="member-photo">
                     <h3>President</h3>
-                    <p>Aaron Sarmento</p>
+                    <p>Christian Jay D. Belen</p>
                 </div>
             </div>
         </div>
@@ -1410,9 +1581,9 @@ nav a.active:not(img) {
         <div class="level directors-level">
             <div class="position">
                 <div class="content">
-                    <img src="BEL.PNG" alt="Vice President" class="member-photo">
+                    <img src="SAR.JPEG" alt="Vice President" class="member-photo">
                     <h3>Vice President</h3>
-                    <p>Christian Jay Belen</p>
+                    <p>Aaron Sarmento</p>
                 </div>
             </div>
         </div>
@@ -1621,6 +1792,23 @@ function toggleDropdown() {
     dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
 }
 
+// Mobile hamburger menu toggle
+function toggleNav() {
+    const navLinks = document.getElementById('navLinks');
+    const icon = document.getElementById('navToggleIcon');
+    const isOpen = navLinks.classList.toggle('nav-open');
+    icon.classList.toggle('fa-bars', !isOpen);
+    icon.classList.toggle('fa-times', isOpen);
+}
+
+function closeMobileNav() {
+    const navLinks = document.getElementById('navLinks');
+    const icon = document.getElementById('navToggleIcon');
+    navLinks.classList.remove('nav-open');
+    icon.classList.remove('fa-times');
+    icon.classList.add('fa-bars');
+}
+
 function showSection(section, link) {
     let sections = document.querySelectorAll('.container');
     for (let sectionElem of sections) {
@@ -1643,6 +1831,9 @@ function showSection(section, link) {
         linkElem.classList.remove('active');
     }
     link.classList.add('active');
+
+    // Close the mobile menu after navigating
+    closeMobileNav();
 }
 
 document.querySelectorAll('.guide-nav a').forEach(anchor => {
@@ -1743,6 +1934,8 @@ function scrollToHeader() {
         link.classList.remove('active');
     }
     document.querySelector('nav a[onclick*="home"]').classList.add('active');
+
+    closeMobileNav();
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -1977,7 +2170,7 @@ function goToSlide(index) {
 <div class="comments-section">
     <button class="comments-toggle" onclick="toggleComments()">
         <i class="fas fa-comments"></i>
-        Leave Us Comments
+        <span>Leave Us Comments</span>
     </button>
     <div class="comments-panel" id="commentsPanel">
         <div class="comments-header">
