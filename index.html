@@ -621,6 +621,21 @@ p {
         width: 100%;
     }
 
+    /* Make the "About" toggle span the full row so its hover/active
+       highlight matches the other nav links instead of hugging the text */
+    .dropdown > a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    nav a[onclick="toggleDropdown()"]::after {
+        top: 0;
+        margin-left: 8px;
+    }
+
     .dropdown:hover .dropdown-content {
         display: none;
     }
@@ -654,6 +669,28 @@ p {
     header video {
         aspect-ratio: 4 / 3;
         object-fit: cover;
+    }
+
+    /* Move the play button off the logo artwork instead of sitting
+       vertically centered on top of it */
+    .play-button {
+        left: auto;
+        right: 15px;
+        top: auto;
+        bottom: 15px;
+        transform: none;
+        width: 36px;
+        height: 36px;
+        animation: pulsePlayMobile 2s infinite;
+    }
+
+    .play-button:hover {
+        transform: scale(1.1);
+    }
+
+    .play-button::after {
+        left: auto;
+        right: 48px;
     }
 
     /* Comments widget */
@@ -924,6 +961,21 @@ p {
     100% {
         box-shadow: 0 0 0 0 rgba(0, 51, 102, 0);
         transform: translateY(-50%) scale(1);
+    }
+}
+
+@keyframes pulsePlayMobile {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 51, 102, 0.7);
+        transform: scale(1);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(0, 51, 102, 0);
+        transform: scale(1.05);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 51, 102, 0);
+        transform: scale(1);
     }
 }
 
