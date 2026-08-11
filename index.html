@@ -364,10 +364,21 @@ header.site-header video{
   font-size:1rem; flex:none;
 }
 .play-button span.label{ font-weight:600; font-size:.92rem; white-space:nowrap; }
+.play-button .label-short{ display:none; }
 .play-button:hover{ transform:translateY(-3px); background:rgba(0,51,102,.85); box-shadow:0 14px 28px -10px rgba(0,7,45,.55); }
+@keyframes playRingPulse{
+  0%,100%{ box-shadow:0 0 0 0 rgba(255,255,255,.4); }
+  50%{ box-shadow:0 0 0 7px rgba(255,255,255,0); }
+}
 @media (max-width: 640px){
-  .play-button{ right:16px; bottom:16px; padding:10px; }
-  .play-button span.label{ display:none; }
+  .play-button{
+    right:14px; bottom:14px; padding:9px 18px 9px 9px;
+    background:rgba(0,7,45,.78); border-color:rgba(255,255,255,.7);
+    box-shadow:0 10px 26px -8px rgba(0,7,45,.65);
+  }
+  .play-button .ring{ width:44px; height:44px; background:rgba(255,255,255,.22); animation:playRingPulse 2.4s ease-in-out infinite; }
+  .play-button .label-full{ display:none; }
+  .play-button .label-short{ display:inline; font-size:.82rem; }
 }
 
 /* ============================================================
@@ -562,10 +573,27 @@ dialog::backdrop{ background:rgba(5,10,24,.6); backdrop-filter:blur(2px); }
 .feedback-success i{ font-size:1.8rem; animation:fbCheckIn .4s cubic-bezier(.34,1.56,.64,1) both; }
 @keyframes fbCheckIn{ from{ transform:scale(0); opacity:0; } to{ transform:scale(1); opacity:1; } }
 
+.feedback-panel .dialog-close{
+  background:rgba(255,255,255,.16); border-color:rgba(255,255,255,.4); color:#fff;
+  flex:none; transition:background-color .2s ease, border-color .2s ease, transform .2s ease;
+}
+.feedback-panel .dialog-close:hover, .feedback-panel .dialog-close:focus-visible{
+  background:#fff; color:var(--accent-ink); border-color:#fff; transform:scale(1.06);
+}
+.feedback-panel .dialog-close:active{ transform:scale(.94); }
+
 @media (max-width: 560px){
   .feedback-fab span{ display:none; }
   .feedback-fab{ padding:14px; }
   .feedback-panel{ width:100vw; }
+  .feedback-panel .dialog-head{
+    padding:calc(16px + env(safe-area-inset-top, 0px)) 16px 16px 22px;
+    align-items:flex-start;
+  }
+  .feedback-panel .dialog-close{
+    width:42px; height:42px; font-size:1.05rem;
+    margin-top:env(safe-area-inset-top, 0px);
+  }
 }
 
 /* ============================================================
@@ -656,7 +684,8 @@ dialog::backdrop{ background:rgba(5,10,24,.6); backdrop-filter:blur(2px); }
 <header class="site-header" id="siteHeader">
   <button class="play-button" id="openVideo" aria-label="Watch introduction video">
     <span class="ring"><i class="fas fa-play" style="margin-left:2px;"></i></span>
-    <span class="label">Watch introduction</span>
+    <span class="label label-full">Watch introduction</span>
+    <span class="label label-short">Intro</span>
   </button>
   <video autoplay loop muted playsinline aria-hidden="true">
     <source src="DT.mp4" type="video/mp4">
@@ -776,7 +805,7 @@ dialog::backdrop{ background:rgba(5,10,24,.6); backdrop-filter:blur(2px); }
         <div class="org-tier tier-1">
           <div class="panel member">
             <div class="avatar">
-              <img src="BEL.png" alt="Christian Jay D. Belen" onerror="this.remove();">
+              <img src="BEL.PNG" alt="Christian Jay D. Belen" onerror="this.remove();">
               <span class="initials">CB</span>
             </div>
             <span class="role">President</span>
@@ -787,7 +816,7 @@ dialog::backdrop{ background:rgba(5,10,24,.6); backdrop-filter:blur(2px); }
         <div class="org-tier tier-2">
           <div class="panel member">
             <div class="avatar">
-              <img src="SAR.jpeg" alt="Aaron Sarmento" onerror="this.remove();">
+              <img src="SAR.JPEG" alt="Aaron Sarmento" onerror="this.remove();">
               <span class="initials">AS</span>
             </div>
             <span class="role">Vice President</span>
@@ -798,7 +827,7 @@ dialog::backdrop{ background:rgba(5,10,24,.6); backdrop-filter:blur(2px); }
         <div class="org-tier tier-3">
           <div class="panel member">
             <div class="avatar">
-              <img src="LAT.jpeg" alt="James Stephen Lat" onerror="this.remove();">
+              <img src="LAT.JPEG" alt="James Stephen Lat" onerror="this.remove();">
               <span class="initials">JL</span>
             </div>
             <span class="role">V.P. Marketing</span>
@@ -806,7 +835,7 @@ dialog::backdrop{ background:rgba(5,10,24,.6); backdrop-filter:blur(2px); }
           </div>
           <div class="panel member">
             <div class="avatar">
-              <img src="REG.jpeg" alt="Regielyn Escala" onerror="this.remove();">
+              <img src="REG.JPEG" alt="Regielyn Escala" onerror="this.remove();">
               <span class="initials">RE</span>
             </div>
             <span class="role">V.P. Finance</span>
@@ -814,7 +843,7 @@ dialog::backdrop{ background:rgba(5,10,24,.6); backdrop-filter:blur(2px); }
           </div>
           <div class="panel member">
             <div class="avatar">
-              <img src="JEN.jpeg" alt="Jenelyn Bulambao" onerror="this.remove();">
+              <img src="JEN.JPEG" alt="Jenelyn Bulambao" onerror="this.remove();">
               <span class="initials">JB</span>
             </div>
             <span class="role">V.P. Operations</span>
