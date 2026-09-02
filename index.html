@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ascend Cybersecurity — Threat Detection, Compliance & Managed Security</title>
+<meta name="description" content="Ascend is a cybersecurity company protecting businesses across the Philippines with threat detection, compliance, managed security and training services.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ============================================================
+     LOADER
+     ============================================================ -->
+<div id="loader-wrapper" role="status" aria-live="polite">
+  <div class="loader-bg" aria-hidden="true"></div>
+  <div class="loader-content">
+    <div class="loader-mark">
+      <span class="loader-ring" aria-hidden="true"></span>
+      <img src="src/logo.png" alt="" class="loader-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="loader-logo-fallback">A</div>
+    </div>
+    <span class="loader-brand">Ascend</span>
+    <div class="progress-container">
+      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+      <div class="progress-meta">
+        <span>Securing your session</span>
+        <span class="progress-percent" id="loaderPercent">0%</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="main-content">
+
+<!-- ============================================================
+     NAV
+     ============================================================ -->
+<nav class="site-nav">
+  <div class="nav-inner">
+    <button class="brand" id="logoHome" title="Back to home">
+      <img src="src/logo.png" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <span class="brand-fallback">A</span>
+      Ascend
+    </button>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#" class="nav-link active" data-target="home"><span><i class="fas fa-house nav-link-icon"></i>Home</span><i class="fas fa-chevron-right nav-link-chevron"></i></a></li>
+      <li class="dropdown" id="aboutDropdown">
+        <button class="nav-link dropdown-toggle" id="aboutToggle" aria-haspopup="true" aria-expanded="false">
+          <span><i class="fas fa-circle-info nav-link-icon"></i>About</span> <i class="fas fa-chevron-down dropdown-arrow"></i>
+        </button>
+        <div class="dropdown-content">
+          <div class="dropdown-content-inner">
+            <a href="#" data-target="company">Company About</a>
+            <a href="#" data-target="vision-mission">Vision &amp; Mission</a>
+            <a href="#" data-target="goals-objectives">Goals &amp; Objectives</a>
+            <a href="#" data-target="team">Our Team</a>
+          </div>
+        </div>
+      </li>
+      <li><a href="#" class="nav-link" data-target="services"><span><i class="fas fa-shield-halved nav-link-icon"></i>Services</span><i class="fas fa-chevron-right nav-link-chevron"></i></a></li>
+      <li><a href="#" class="nav-link" data-target="contacts"><span><i class="fas fa-envelope nav-link-icon"></i>Contacts</span><i class="fas fa-chevron-right nav-link-chevron"></i></a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <button class="icon-btn" id="helpBtn" title="Need help?" aria-haspopup="dialog">
+        <i class="fas fa-circle-question"></i>
+        <span>Need help?</span>
+      </button>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+        <span class="hamburger"><span></span><span></span><span></span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================================================
+     HEADER VIDEO (persistent across all pages)
+     ============================================================ -->
+<header class="site-header" id="siteHeader">
+  <button class="play-button" id="openVideo" aria-label="Watch introduction video">
+    <span class="ring"><i class="fas fa-play" style="margin-left:2px;"></i></span>
+    <span class="label label-full">Watch introduction</span>
+    <span class="label label-short">Intro</span>
+  </button>
+  <video autoplay loop muted playsinline aria-hidden="true">
+    <source src="src/DT.mp4" type="video/mp4">
+  </video>
+</header>
+
+<main id="main">
+
+  <!-- ============================================================
+       HOME
+       ============================================================ -->
+  <section class="page-section is-active" id="home">
+    <div class="wrap">
+      <span class="eyebrow">Cybersecurity, applied</span>
+      <h2 class="section-title"><i class="fas fa-house" style="color:var(--accent); margin-right:.4em;"></i>Welcome to Ascend</h2>
+      <p class="section-lede">Your trusted partner in cybersecurity solutions. We provide comprehensive protection for your digital assets, ensuring your peace of mind in an ever-evolving technological environment.</p>
+
+      <div class="status-strip">
+        <div class="readout"><div class="k">Status</div><div class="v"><span class="dot"></span>Operational</div></div>
+        <div class="readout"><div class="k">Coverage</div><div class="v">Manila · Cebu</div></div>
+        <div class="readout"><div class="k">Service lines</div><div class="v">4 core modules</div></div>
+        <div class="readout"><div class="k">Support</div><div class="v">7 days a week</div></div>
+      </div>
+
+      <div class="carousel" id="carousel" aria-roledescription="carousel" aria-label="Ascend highlights">
+        <div class="carousel-track" id="carouselTrack">
+          <div class="carousel-slide"><img src="src/1.png" alt="Ascend highlight 1" onerror="this.closest('.carousel').style.display='none';"></div>
+          <div class="carousel-slide"><img src="src/2.png" alt="Ascend highlight 2"></div>
+          <div class="carousel-slide"><img src="src/3.png" alt="Ascend highlight 3"></div>
+        </div>
+        <button class="carousel-btn prev" id="carouselPrev" aria-label="Previous slide"><i class="fas fa-chevron-left"></i></button>
+        <button class="carousel-btn next" id="carouselNext" aria-label="Next slide"><i class="fas fa-chevron-right"></i></button>
+        <div class="carousel-dots" id="carouselDots"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       COMPANY ABOUT
+       ============================================================ -->
+  <section class="page-section" id="company">
+    <div class="wrap">
+      <span class="eyebrow">// 01 — About Ascend</span>
+      <h2 class="section-title"><i class="fas fa-shield-alt" style="color:var(--accent); margin-right:.4em;"></i>Company About</h2>
+      <p class="section-lede">Welcome to Ascend, where we combine expertise, innovation, and dedication to deliver comprehensive cybersecurity solutions that protect and empower organizations in the digital age.</p>
+
+      <div class="panel">
+        <h3><i class="fas fa-users" style="color:var(--accent); margin-right:.4em;"></i>Who We Are</h3>
+        <p>Ascend is a cybersecurity company working to help companies and people preserve safety in the digital space. We have a large range of services, from protection against web threats to vulnerability identification and correction to expert advice that ensures that your systems are safe. Our goal is to help you work, grow, and thrive free from the burden of cyber risks.</p>
+        <p>At Ascend, we believe that cybersecurity is not only about protection but also building trust and confidence. Our team of proficient experts works closely with clients to develop simple, effective, and customized solutions to meet their specific needs. Whether you are a small business or a large corporation, we are here to help you build a safer and more resilient digital future.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       VISION & MISSION
+       ============================================================ -->
+  <section class="page-section" id="vision-mission">
+    <div class="wrap">
+      <span class="eyebrow">// 01 — About Ascend</span>
+      <h2 class="section-title"><i class="fas fa-compass" style="color:var(--accent); margin-right:.4em;"></i>Vision &amp; Mission</h2>
+      <p class="section-lede">At Ascend, we are driven by a clear vision and mission that guide our commitment to cybersecurity excellence and client success.</p>
+
+      <div class="grid-2">
+        <div class="panel">
+          <span class="tag"><i class="fas fa-eye"></i> Vision</span>
+          <p style="margin-top:14px;">To be a global leader in cybersecurity, empowering businesses and individuals to thrive in a secure and resilient digital world.</p>
+        </div>
+        <div class="panel">
+          <span class="tag"><i class="fas fa-bullseye"></i> Mission</span>
+          <p style="margin-top:14px;">To provide innovative, reliable, and accessible cybersecurity solutions that safeguard our clients' digital assets, foster trust, and spur growth within an ever-evolving technological environment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       GOALS & OBJECTIVES
+       ============================================================ -->
+  <section class="page-section" id="goals-objectives">
+    <div class="wrap">
+      <span class="eyebrow">// 01 — About Ascend</span>
+      <h2 class="section-title"><i class="fas fa-chart-line" style="color:var(--accent); margin-right:.4em;"></i>Goals &amp; Objectives</h2>
+      <p class="section-lede">Our strategic goals and objectives are designed to deliver exceptional value to our clients while maintaining our position at the forefront of cybersecurity innovation.</p>
+
+      <div class="grid-2">
+        <div class="panel">
+          <h3 style="font-size:1.15rem;"><i class="fas fa-flag" style="color:var(--accent); margin-right:.4em;"></i>Our Goals</h3>
+          <ul class="list-plain">
+            <li>To offer effective and tailored cybersecurity solutions for the varied needs of clients.</li>
+            <li>To be at the forefront of cybersecurity innovation through continuous research and development.</li>
+            <li>To build strong, long-term relationships through reliable and proactive support.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3 style="font-size:1.15rem;"><i class="fas fa-tasks" style="color:var(--accent); margin-right:.4em;"></i>Our Objectives</h3>
+          <ul class="list-plain">
+            <li>To develop and implement solutions that specifically address client challenges.</li>
+            <li>To continuously update tools and strategies in order to counter emerging cyber threats.</li>
+            <li>Augment client understanding through training sessions and consultations regarding best practices in cybersecurity.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TEAM
+       ============================================================ -->
+  <section class="page-section" id="team">
+    <div class="wrap">
+      <span class="eyebrow">// 01 — About Ascend</span>
+      <h2 class="section-title"><i class="fas fa-users-cog" style="color:var(--accent); margin-right:.4em;"></i>Our Team</h2>
+      <p class="section-lede">Meet the talented individuals behind our success.</p>
+
+      <div class="org">
+        <div class="org-tier tier-1">
+          <div class="panel member">
+            <div class="avatar">
+              <img src="src/BEL.jpg" alt="Christian Jay D. Belen" onerror="this.remove();">
+              <span class="initials">CB</span>
+            </div>
+            <span class="role">President</span>
+            <h4>Christian Jay D. Belen</h4>
+          </div>
+        </div>
+
+        <div class="org-tier tier-2">
+          <div class="panel member">
+            <div class="avatar">
+              <img src="src/SAR.jpeg" alt="Aaron Sarmento" onerror="this.remove();">
+              <span class="initials">AS</span>
+            </div>
+            <span class="role">Vice President</span>
+            <h4>Aaron Sarmento</h4>
+          </div>
+        </div>
+
+        <div class="org-tier tier-3">
+          <div class="panel member">
+            <div class="avatar">
+              <img src="src/LAT.jpeg" alt="James Stephen Lat" onerror="this.remove();">
+              <span class="initials">JL</span>
+            </div>
+            <span class="role">V.P. Marketing</span>
+            <h4>James Stephen Lat</h4>
+          </div>
+          <div class="panel member">
+            <div class="avatar">
+              <img src="src/REG.jpeg" alt="Regielyn Escala" onerror="this.remove();">
+              <span class="initials">RE</span>
+            </div>
+            <span class="role">V.P. Finance</span>
+            <h4>Regielyn Escala</h4>
+          </div>
+          <div class="panel member">
+            <div class="avatar">
+              <img src="src/JEN.jpeg" alt="Jenelyn Bulambao" onerror="this.remove();">
+              <span class="initials">JB</span>
+            </div>
+            <span class="role">V.P. Operations</span>
+            <h4>Jenelyn Bulambao</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SERVICES
+       ============================================================ -->
+  <section class="page-section" id="services">
+    <div class="wrap">
+      <span class="eyebrow">// 02 — What we do</span>
+      <h2 class="section-title"><i class="fas fa-cogs" style="color:var(--accent); margin-right:.4em;"></i>Our Services</h2>
+      <p class="section-lede">We offer a comprehensive suite of cybersecurity services to protect your business from evolving threats. Our expert team provides solutions tailored to meet your unique needs, ensuring your operations stay safe, resilient, and compliant.</p>
+
+      <div class="services-grid">
+        <article class="panel service-card">
+          <div class="service-head">
+            <div class="service-icon"><i class="fas fa-shield-virus"></i></div>
+            <span class="service-num">MODULE 01</span>
+          </div>
+          <h3>Threat Detection &amp; Prevention</h3>
+          <ul class="list-plain">
+            <li>Vulnerability assessment</li>
+            <li>Penetration testing</li>
+            <li>Malware analysis and removal</li>
+            <li>Intrusion detection &amp; prevention systems</li>
+            <li>Threat intelligence</li>
+          </ul>
+        </article>
+
+        <article class="panel service-card">
+          <div class="service-head">
+            <div class="service-icon"><i class="fas fa-clipboard-check"></i></div>
+            <span class="service-num">MODULE 02</span>
+          </div>
+          <h3>Compliance &amp; Governance</h3>
+          <ul class="list-plain">
+            <li>Regulatory compliance support</li>
+            <li>Data protection &amp; privacy services</li>
+            <li>Policy development and review</li>
+            <li>Risk management</li>
+            <li>Audit and reporting services</li>
+          </ul>
+        </article>
+
+        <article class="panel service-card">
+          <div class="service-head">
+            <div class="service-icon"><i class="fas fa-user-shield"></i></div>
+            <span class="service-num">MODULE 03</span>
+          </div>
+          <h3>Managed Security</h3>
+          <ul class="list-plain">
+            <li>Managed detection &amp; response (MDR)</li>
+            <li>Endpoint protection management</li>
+            <li>Cloud security management</li>
+            <li>Firewall management</li>
+            <li>Incident response retainer</li>
+          </ul>
+        </article>
+
+        <article class="panel service-card">
+          <div class="service-head">
+            <div class="service-icon"><i class="fas fa-graduation-cap"></i></div>
+            <span class="service-num">MODULE 04</span>
+          </div>
+          <h3>Education &amp; Training</h3>
+          <ul class="list-plain">
+            <li>Training and certification</li>
+            <li>Awareness workshops</li>
+            <li>Online learning</li>
+            <li>Crisis simulation</li>
+            <li>Youth education programs</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACTS
+       ============================================================ -->
+  <section class="page-section" id="contacts">
+    <div class="wrap">
+      <span class="eyebrow">// 03 — Get in touch</span>
+      <h2 class="section-title"><i class="fas fa-address-book" style="color:var(--accent); margin-right:.4em;"></i>Contact Us</h2>
+      <p class="section-lede">Thank you for reaching out to Ascend! We're here to assist you with all your cybersecurity needs. Please find our contact information below for inquiries, support, or more details about our services.</p>
+
+      <div class="contact-grid">
+        <div class="panel contact-card">
+          <h3><i class="fas fa-building"></i> Headquarters</h3>
+          <div class="contact-line"><i class="fas fa-map-marker-alt"></i> 123 UpTown Blvd., Tech City, Metro Manila, Philippines</div>
+          <div class="contact-line"><i class="fas fa-phone"></i> <a href="tel:+345835413997">+34 (583)-5413-9973</a></div>
+          <div class="contact-line"><i class="fas fa-envelope"></i> <a href="mailto:main@ascendsecurity.ph">main@ascendsecurity.ph</a></div>
+          <div class="contact-line"><i class="fas fa-globe"></i> <a href="https://www.ascendcybersecurity.com">www.ascendcybersecurity.com</a></div>
+          <div class="contact-line"><i class="fas fa-clock"></i> Monday to Sunday · 9:00 AM – 6:00 PM (EST)</div>
+        </div>
+
+        <div class="panel contact-card">
+          <h3><i class="fas fa-landmark"></i> Cebu City Branch</h3>
+          <div class="contact-line"><i class="fas fa-map-marker-alt"></i> 789 Secure Rd., Cebu Business Park, Cebu City, Philippines</div>
+          <div class="contact-line"><i class="fas fa-phone"></i> <a href="tel:+636381234567">+63 (638)-1234-5678</a></div>
+          <div class="contact-line"><i class="fas fa-envelope"></i> <a href="mailto:cebu@ascendsecurity.ph">cebu@ascendsecurity.ph</a></div>
+          <div class="contact-line"><i class="fas fa-globe"></i> <a href="https://www.ascendcybersecurity.com">www.ascendcybersecurity.com</a></div>
+          <div class="contact-line"><i class="fas fa-clock"></i> Monday to Sunday · 9:00 AM – 6:00 PM (EST)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="src/logo.png" alt="" onerror="this.style.display='none';">
+      Ascend
+    </div>
+    <ul class="footer-links">
+      <li><a href="#" id="openPrivacy">Privacy Policy</a></li>
+      <li><a href="#" id="openTerms">Terms of Service</a></li>
+      <li><a href="#" id="openHelp2">Help Centre</a></li>
+    </ul>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2024 Ascend Group. All rights reserved.</span>
+    <span>Manila · Cebu City</span>
+  </div>
+</footer>
+
+<!-- ============================================================
+     DIALOGS
+     ============================================================ -->
+<dialog id="privacyDialog">
+  <div class="dialog-shell">
+    <div class="dialog-head">
+      <h2><i class="fas fa-user-shield"></i> Privacy Policy</h2>
+      <button class="dialog-close" data-close><i class="fas fa-times"></i></button>
+    </div>
+    <div class="dialog-body">
+      <h3>1. Information collection</h3>
+      <p>We collect information you provide directly to us, including your name, email address, and any other information you choose to share.</p>
+      <h3>2. Use of information</h3>
+      <p>We use the information we collect to provide, maintain, and improve our services, communicate with you, and protect our services and users.</p>
+      <h3>3. Information sharing</h3>
+      <p>We do not share your personal information with third parties except as described in this policy or with your consent.</p>
+      <h3>4. Data security</h3>
+      <p>We implement appropriate security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction.</p>
+    </div>
+  </div>
+</dialog>
+
+<dialog id="termsDialog">
+  <div class="dialog-shell">
+    <div class="dialog-head">
+      <h2><i class="fas fa-file-contract"></i> Terms of Service</h2>
+      <button class="dialog-close" data-close><i class="fas fa-times"></i></button>
+    </div>
+    <div class="dialog-body">
+      <h3>1. Acceptance of terms</h3>
+      <p>By accessing and using our services, you agree to be bound by these Terms of Service.</p>
+      <h3>2. Service description</h3>
+      <p>We provide cybersecurity services and solutions designed to protect digital assets and information.</p>
+      <h3>3. User responsibilities</h3>
+      <p>Users must provide accurate information and maintain the security of their account credentials.</p>
+      <h3>4. Limitation of liability</h3>
+      <p>We shall not be liable for any indirect, incidental, special, consequential, or punitive damages.</p>
+    </div>
+  </div>
+</dialog>
+
+<dialog id="helpDialog">
+  <div class="dialog-shell">
+    <div class="dialog-head">
+      <h2><i class="fas fa-circle-question"></i> Help Centre</h2>
+      <button class="dialog-close" data-close><i class="fas fa-times"></i></button>
+    </div>
+    <div class="dialog-body">
+      <h3>Quick navigation guide</h3>
+      <p>Click the navigation menu items to jump between pages. Use the dropdown menu in "About" to explore company information. Click the logo to return to Home.</p>
+      <h3>How do I contact support?</h3>
+      <p>Visit the Contacts page, or email us at support@ascendsecurity.ph.</p>
+      <h3>Where can I find information about your services?</h3>
+      <p>Click on the "Services" tab in the navigation menu to view our complete service offering.</p>
+      <h3>How can I request a quote?</h3>
+      <p>Contact us through the Contacts page or email sales@ascendsecurity.ph.</p>
+      <h3>Need more help?</h3>
+      <p>Email support@ascendsecurity.ph or call +34 (583)-5413-9973. Live chat is available during business hours.</p>
+    </div>
+  </div>
+</dialog>
+
+<dialog id="videoDialog">
+  <div class="dialog-shell">
+    <div class="dialog-head">
+      <h2>Introduction</h2>
+      <button class="dialog-close" data-close><i class="fas fa-times"></i></button>
+    </div>
+    <video id="modalVideo" controls>
+      <source src="src/IV.mp4" type="video/mp4">
+    </video>
+  </div>
+</dialog>
+
+<!-- ============================================================
+     FEEDBACK PANEL
+     ============================================================ -->
+<button class="feedback-fab" id="feedbackToggle">
+  <i class="fas fa-comment-dots"></i> <span>Leave feedback</span>
+</button>
+
+<div class="feedback-backdrop" id="feedbackBackdrop"></div>
+
+<aside class="feedback-panel" id="feedbackPanel" aria-hidden="true">
+  <div class="dialog-head">
+    <div>
+      <h2><i class="fas fa-comments"></i> Leave us feedback</h2>
+      <p>Tell us what's working and what isn't — it goes straight to our team.</p>
+    </div>
+    <button class="dialog-close" id="feedbackClose"><i class="fas fa-times"></i></button>
+  </div>
+  <form id="feedbackForm">
+    <div class="field">
+      <label>What's this about?</label>
+      <div class="fb-type" id="fbType">
+        <button type="button" class="fb-type-btn active" data-value="general"><i class="fas fa-lightbulb"></i>General</button>
+        <button type="button" class="fb-type-btn" data-value="bug"><i class="fas fa-bug"></i>Bug</button>
+        <button type="button" class="fb-type-btn" data-value="idea"><i class="fas fa-star"></i>Idea</button>
+      </div>
+    </div>
+
+    <div class="fb-rating">
+      <span class="fb-rating-label">Overall experience</span>
+      <div class="fb-stars" id="fbStars">
+        <button type="button" data-value="1" aria-label="1 star"><i class="fas fa-star"></i></button>
+        <button type="button" data-value="2" aria-label="2 stars"><i class="fas fa-star"></i></button>
+        <button type="button" data-value="3" aria-label="3 stars"><i class="fas fa-star"></i></button>
+        <button type="button" data-value="4" aria-label="4 stars"><i class="fas fa-star"></i></button>
+        <button type="button" data-value="5" aria-label="5 stars"><i class="fas fa-star"></i></button>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="fbName">Your name</label>
+      <div class="field-input-wrap">
+        <i class="fas fa-user"></i>
+        <input id="fbName" type="text" required>
+      </div>
+    </div>
+    <div class="field">
+      <label for="fbEmail">Your email</label>
+      <div class="field-input-wrap">
+        <i class="fas fa-envelope"></i>
+        <input id="fbEmail" type="email" required>
+      </div>
+    </div>
+    <div class="field">
+      <label for="fbComment">Your comment</label>
+      <textarea id="fbComment" maxlength="500" required></textarea>
+      <span class="field-count"><span id="fbCommentCount">0</span>/500</span>
+    </div>
+    <button type="submit" class="btn btn-primary fb-submit">
+      <i class="fas fa-paper-plane"></i> Submit feedback
+    </button>
+    <div id="feedbackSuccess" class="feedback-success" style="display:none;">
+      <i class="fas fa-check-circle"></i>
+      <span>Thanks — we've received your feedback and will follow up if needed.</span>
+    </div>
+  </form>
+</aside>
+
+<button class="to-top" id="toTop" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+
+</div><!-- /#main-content -->
+
+<script src="script.js"></script>
+</body>
+</html>
